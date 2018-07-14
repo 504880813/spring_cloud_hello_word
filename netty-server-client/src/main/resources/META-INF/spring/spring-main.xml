@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-4.1.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd
+	http://www.springframework.org/schema/task 
+	http://www.springframework.org/schema/task/spring-task-4.1.xsd">
+	
+	<bean id="im-server-service"
+		class="com.yyxb.framework.core.utils.CustomPropertyConfigurer">
+		<property name="order" value="1"/>
+		<property name="ignoreResourceNotFound" value="true" />
+		<property name="ignoreUnresolvablePlaceholders" value="true" />	
+		<property name="locations">
+			<list>
+				<value>classpath:config/dev_config.properties</value>
+				<value>file:/home/mbp/service/core_conf/dubbo.properties</value>
+			</list>
+		</property>
+	</bean>
+	<import resource="classpath:META-INF/core/spring-root-main.xml" />
+	<import resource="classpath:META-INF/redis/spring-redis-standAlone-config.xml" />
+	<import resource="classpath:META-INF/mysql-dao/spring-mybatis-config.xml" />
+	<import resource="classpath:META-INF/im-server-service/dubbo-consumer.xml" />
+	<import resource="classpath:META-INF/im-server-service/dubbo-provider.xml" />	
+    <!-- mq -->
+	<import resource="classpath:META-INF/rabbit/rabbit-direct-config.xml" />			
+	 
+	<context:component-scan base-package="com.yyxb.framework.redis" />
+	<context:component-scan base-package="com.yyxb.framework.service" />
+	<context:component-scan base-package="com.yyxb.framework.primary" />
+	<context:component-scan base-package="com.yyxb.framework.util.utils" />		
+	<context:component-scan base-package="com.yyxb.im.server.service.main.pb" />
+	 
+</beans>

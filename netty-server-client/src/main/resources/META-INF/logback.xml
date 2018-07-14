@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<property name="FILE_SAVE_PATH" value="/home/mbp/logs/back/mbp-im/mbp-im-server-service.log"/>
+	<property name="FILE_BACK_SAVE_PATH" value="/home/mbp/logs/back/mbp-im/mbp-im-server-service"/>
+	<property name="LOG_LEVEL_APP" value="INFO"/>
+	<include resource="META-INF/core/yyxb-core-logback.xml"/>
+</configuration>

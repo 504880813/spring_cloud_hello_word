@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.baymax</groupId>
+	<artifactId>netty.server.redis.client</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>netty.server.redis.client</name>
+	<packaging>jar</packaging>
+	<description>redis client</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.version>0.0.1-SNAPSHOT</project.version>
+		<java.version>1.7</java.version>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-all</artifactId>
+			<version>4.1.6.Final</version>
+			<scope>compile</scope>
+		</dependency>
+
+	</dependencies>
+
+
+	<build>
+		<finalName>netty-server-redis-client</finalName>
+		<!-- <resources> <resource> <targetPath>${project.build.directory}/classes</targetPath> 
+			<directory>src/main/resources</directory> <filtering>true</filtering> <includes> 
+			<include>**/*.xml</include> <include>**/*.properties</include> <include>**/*.conf</include> 
+			</includes> </resource> 结合com.alibaba.dubbo.container.Main <resource> <targetPath>${project.build.directory}/classes/META-INF/im-server-service</targetPath> 
+			<directory>src/main/resources/im-server-service</directory> <filtering>true</filtering> 
+			<includes> <include>spring-main.xml</include> </includes> </resource> </resources> 
+			<pluginManagement> <plugins> 解决Maven插件在Eclipse内执行了一系列的生命周期引起冲突 <plugin> <groupId>org.eclipse.m2e</groupId> 
+			<artifactId>lifecycle-mapping</artifactId> <version>1.0.0</version> <configuration> 
+			<lifecycleMappingMetadata> <pluginExecutions> <pluginExecution> <pluginExecutionFilter> 
+			<groupId>org.apache.maven.plugins</groupId> <artifactId>maven-dependency-plugin</artifactId> 
+			<versionRange>[2.0,)</versionRange> <goals> <goal>copy-dependencies</goal> 
+			</goals> </pluginExecutionFilter> <action> <ignore /> </action> </pluginExecution> 
+			</pluginExecutions> </lifecycleMappingMetadata> </configuration> </plugin> 
+			</plugins> </pluginManagement> <plugins> 打包jar文件时，配置manifest文件，加入lib包的jar依赖 
+			<plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-jar-plugin</artifactId> 
+			<configuration> <classesDirectory>target/classes/</classesDirectory> <archive> 
+			<manifest> <mainClass>com.alibaba.dubbo.container.Main</mainClass> 打包时 MANIFEST.MF文件不记录的时间戳版本 
+			<useUniqueVersions>false</useUniqueVersions> <addClasspath>true</addClasspath> 
+			<classpathPrefix>lib/</classpathPrefix> </manifest> <manifestEntries> <Class-Path>.</Class-Path> 
+			</manifestEntries> </archive> </configuration> </plugin> <plugin> <artifactId>maven-resources-plugin</artifactId> 
+			<version>2.5</version> <executions> <execution> <id>copy-resources</id> <phase>validate</phase> 
+			<goals> <goal>copy-resources</goal> </goals> <configuration> <outputDirectory>${project.build.directory}/bin</outputDirectory> 
+			<resources> <resource> <directory>src/main/resources/bin</directory> <filtering>true</filtering> 
+			</resource> </resources> </configuration> </execution> </executions> </plugin> 
+			<plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-dependency-plugin</artifactId> 
+			<executions> <execution> <id>copy-dependencies</id> <phase>package</phase> 
+			<goals> <goal>copy-dependencies</goal> </goals> <configuration> <type>jar</type> 
+			<includeTypes>jar</includeTypes> <useUniqueVersions>false</useUniqueVersions> 
+			<outputDirectory> ${project.build.directory}/lib </outputDirectory> </configuration> 
+			</execution> </executions> </plugin> <plugin> <groupId>org.apache.maven.plugins</groupId> 
+			<artifactId>maven-surefire-plugin</artifactId> <version>2.12</version> <dependencies> 
+			<dependency> <groupId>org.apache.maven.surefire</groupId> <artifactId>surefire-junit47</artifactId> 
+			<version>2.12</version> </dependency> </dependencies> </plugin> <plugin> 
+			<groupId>org.apache.maven.plugins</groupId> <artifactId>maven-compiler-plugin</artifactId> 
+			<configuration> <source>1.7</source> <target>1.7</target> </configuration> 
+			</plugin> <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-surefire-plugin</artifactId> 
+			<configuration> <skip>true</skip> </configuration> </plugin> <plugin> <groupId>org.springframework.boot</groupId> 
+			<artifactId>spring-boot-maven-plugin</artifactId> <dependencies> 修改代码后自动生效，Reload 
+			Java classes without restarting the container <dependency> <groupId>org.springframework</groupId> 
+			<artifactId>springloaded</artifactId> <version>1.2.6.RELEASE</version> </dependency> 
+			</dependencies> </plugin> </plugins> -->
+	</build>
+</project>

@@ -1,0 +1,4 @@
+
+1、安装python ，使用python -V 查看是否已经安装成功
+2、下载安装pip-1.5.5插件 ，命名：python  setup.py install
+3、直接安装kazoo， 命令：pip install kazoo
