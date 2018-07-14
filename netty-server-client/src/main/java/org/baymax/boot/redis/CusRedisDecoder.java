@@ -10,6 +10,7 @@ public class CusRedisDecoder extends ByteToMessageDecoder {
 
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
+        //byte 数组解码  TODO 
         byte[] byteArray = new byte[in.readableBytes()];
         in.readBytes(byteArray);
         String result = new String(byteArray);

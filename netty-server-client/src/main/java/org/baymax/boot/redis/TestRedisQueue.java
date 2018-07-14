@@ -30,7 +30,7 @@ public class TestRedisQueue {
         try {
             ExecutorService pool = Executors.newCachedThreadPool();
             CountDownLatchTest1 test = new CountDownLatchTest1();
-            for (int i = 0; i < 30; i++) {
+            for (int i = 0; i < 1; i++) {
                 pool.execute(test);
             }
         } catch (Exception e) {
