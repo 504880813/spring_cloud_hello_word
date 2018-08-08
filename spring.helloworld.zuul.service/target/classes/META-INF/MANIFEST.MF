@@ -1,11 +1,11 @@
 Manifest-Version: 1.0
+Implementation-Vendor: Pivotal Software, Inc.
 Implementation-Title: spring.helloworld.zuul.service
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: Administrator
 Implementation-Vendor-Id: cm.chry
-Build-Jdk: 1.8.0_171
+Build-Jdk: 1.7.0_80
+Built-By: Administrator
+Created-By: Maven Integration for Eclipse
 Implementation-URL: http://projects.spring.io/spring-boot/spring.hello
  world.zuul.service/
-Created-By: Maven Integration for Eclipse
-Implementation-Vendor: Pivotal Software, Inc.
 
