@@ -1,9 +1,12 @@
 package org.baymax.boot.redis;
 
 import java.io.IOException;
+import java.util.logging.Level;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
+import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
@@ -25,7 +28,18 @@ public class NettyRedisClient {
         b.handler(new NettyRedisClientFilter());
         // 连接服务端
         try {
-            channel = b.connect(host, port).sync().channel();
+            ChannelFuture connectfuture = b.connect(host, port).sync();
+//            connectfuture.addListener(new ChannelFutureListener() {
+//
+//                @Override
+//                public void operationComplete(ChannelFuture future)
+//                        throws Exception {
+//                    if (future.isSuccess()) {
+//                        future.channel().closeFuture();
+//                    }
+//                }
+//            });
+            channel = connectfuture.channel();
             channel.writeAndFlush("ping");
         } catch (InterruptedException e) {
             e.printStackTrace();
